@@ -3,8 +3,12 @@ const randomNumber = (from, to) => {
     return NaN;
   }
 
-  return Math.floor((Math.min(from, to) + Math.random() * (Math.max(from, to) - Math.min(from, to) + 1)))
-}
+  return Math.floor((Math.min(from, to) + Math.random() * (Math.max(from, to) - Math.min(from, to) + 1)));
+};
+
+randomNumber (1, 10);
 
 const checkStringLength = (checkedString, maxLength) =>
-checkedString.length <= maxLength;
+  checkedString.length <= maxLength;
+
+checkStringLength ('комментарий', 140);
