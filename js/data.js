@@ -17,11 +17,6 @@ const DESCRIPTIONS = [
   'Curabitur mollis lectus nec lacus iaculis, id placerat est vulputate.'
 ];
 
-const checkStringLength = (checkedString, maxLength) =>
-  checkedString.length <= maxLength;
-
-checkStringLength ();
-
 const createPublication = (index) => ({
   id: index,
   url: `photos/${index}.jpg`,
