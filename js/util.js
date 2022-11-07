@@ -2,10 +2,15 @@ const getRandomNumber = (from, to) => {
   if (from < 0 || to < 0) {
     return NaN;
   }
+  const max = Math.floor(Math.max(from, to));
+  const min = Math.ceil(Math.min(from, to));
 
-  return Math.floor((Math.min(from, to) + Math.random() * (Math.max(from, to) - Math.min(from, to) + 1)));
+  return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
 const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
 
-export {getRandomArrayElement, getRandomNumber};
+const checkStringLength = (string, maxLength) =>
+  string.length <= maxLength;
+
+export {getRandomArrayElement, getRandomNumber, checkStringLength};

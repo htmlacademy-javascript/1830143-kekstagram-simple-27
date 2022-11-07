@@ -1,4 +1,3 @@
-import {createPublications} from './data.js';
+import {renderThumbnails} from './thumbnails.js';
 
-// eslint-disable-next-line no-console
-console.log(createPublications());
+renderThumbnails();
