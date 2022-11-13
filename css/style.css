@@ -682,6 +682,19 @@ main {
   border: none;
 }
 
+.text__error {
+  position: absolute;
+  left: 70px;
+  top: 104px;
+  color: #ffff00;
+  font-size: 12px;
+  text-align: center;
+}
+
+.img-upload__text {
+  position: relative;
+}
+
 .text__hashtags {
   width: 450px;
 
