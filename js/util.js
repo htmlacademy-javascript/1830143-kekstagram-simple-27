@@ -15,4 +15,4 @@ const checkStringLength = (string, maxLength) =>
 
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
-export {getRandomArrayElement, getRandomNumber, checkStringLength, isEscapeKey};
+export { getRandomArrayElement, getRandomNumber, checkStringLength, isEscapeKey };

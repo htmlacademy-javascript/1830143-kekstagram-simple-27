@@ -1,7 +1,4 @@
-const scaleControlSmaller = document.querySelector('.scale__control--smaller');
-const scaleControlBigger = document.querySelector('.scale__control--bigger');
-const scaleField = document.querySelector('.scale__control--value');
-const image = document.querySelector('.img-upload__preview img');
+import { scaleControlSmaller, scaleControlBigger, scaleField, image } from './dom_elements.js';
 
 const STEP_SCALE = 25;
 const MIN_SCALE = 25;

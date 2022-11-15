@@ -1,10 +1,11 @@
-import {getRandomArrayElement, getRandomNumber} from './util.js';
+import { getRandomArrayElement, getRandomNumber } from './util.js';
 
 const SIMILAR_PUBLICATIONS_COUNT = 25;
 const LIKES_COUNT_FROM = 15;
 const LIKES_COUNT_TO = 200;
 const COMMENTS_COUNT_FROM = 0;
 const COMMENTS_COUNT_TO = 200;
+const EMPTY_VALUE = '';
 
 const DESCRIPTIONS = [
   'Sed sagittis diam at magna tincidunt, sit amet molestie elit lacinia.',
@@ -27,4 +28,4 @@ const createPublication = (index) => ({
 
 const createPublications = () => Array.from({length: SIMILAR_PUBLICATIONS_COUNT}, (_, index) => createPublication(index + 1));
 
-export {createPublications};
+export { createPublications, EMPTY_VALUE };
