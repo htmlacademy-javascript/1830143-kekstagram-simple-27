@@ -1,3 +1,4 @@
+import { resetScale } from './scale.js';
 import { isEscapeKey } from './util.js';
 
 const imgEditorForm = document.querySelector('.img-upload__form');
@@ -46,6 +47,7 @@ const ImgUpload = () => {
     clearFieldValue (imgEditorOpenElement);
     clearFieldValue (commentElement);
     removeValidateErrorMassage();
+    resetScale();
   };
 
   imgEditorOpenElement.addEventListener('change', () => {
@@ -77,4 +79,4 @@ const validateImgEditorForm = () => {
   });
 };
 
-export {ImgUpload, validateImgEditorForm};
+export {ImgUpload, validateImgEditorForm, imgEditorForm};
