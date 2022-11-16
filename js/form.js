@@ -1,12 +1,8 @@
+import { resetScale } from './scale.js';
 import { isEscapeKey } from './util.js';
-
-const imgEditorForm = document.querySelector('.img-upload__form');
-const imgEditorElement = document.querySelector('.img-upload__overlay');
-const imgEditorOpenElement = document.querySelector('#upload-file');
-const imgEditorcloseElement = imgEditorElement.querySelector('#upload-cancel');
-const bodyElement = document.querySelector('body');
-const commentElement = imgEditorForm.querySelector('.text__description');
-const EMPTY_VALUE = '';
+import { imgEditorForm, imgEditorElement, imgEditorOpenElement, imgEditorcloseElement, bodyElement, commentElement } from './dom_elements.js';
+import { EMPTY_VALUE } from './data.js';
+import { resetEffect } from './effects.js';
 
 const ImgUpload = () => {
   const onEditorEscKeydown = (evt) => {
@@ -46,6 +42,8 @@ const ImgUpload = () => {
     clearFieldValue (imgEditorOpenElement);
     clearFieldValue (commentElement);
     removeValidateErrorMassage();
+    resetScale();
+    resetEffect();
   };
 
   imgEditorOpenElement.addEventListener('change', () => {
@@ -77,4 +75,4 @@ const validateImgEditorForm = () => {
   });
 };
 
-export {ImgUpload, validateImgEditorForm};
+export { ImgUpload, validateImgEditorForm, imgEditorForm };

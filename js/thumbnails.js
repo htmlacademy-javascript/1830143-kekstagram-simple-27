@@ -1,7 +1,6 @@
-import {createPublications} from './data.js';
+import { createPublications } from './data.js';
+import { picturesContainer, thumbnailsPicturesTemplate } from './dom_elements.js';
 
-const picturesContainer = document.querySelector('.pictures');
-const thumbnailsPicturesTemplate = document.querySelector('#picture').content.querySelector('.picture');
 
 const renderThumbnails = () => {
   const thumbnailsPictures = createPublications();
@@ -18,4 +17,4 @@ const renderThumbnails = () => {
   picturesContainer.appendChild(sectionFragment);
 };
 
-export {renderThumbnails};
+export { renderThumbnails };
