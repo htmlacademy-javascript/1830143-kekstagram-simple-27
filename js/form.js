@@ -2,6 +2,7 @@ import { resetScale } from './scale.js';
 import { isEscapeKey } from './util.js';
 import { imgEditorForm, imgEditorElement, imgEditorOpenElement, imgEditorcloseElement, bodyElement, commentElement } from './dom_elements.js';
 import { EMPTY_VALUE } from './data.js';
+import { resetEffect } from './effects.js';
 
 const ImgUpload = () => {
   const onEditorEscKeydown = (evt) => {
@@ -42,6 +43,7 @@ const ImgUpload = () => {
     clearFieldValue (commentElement);
     removeValidateErrorMassage();
     resetScale();
+    resetEffect();
   };
 
   imgEditorOpenElement.addEventListener('change', () => {
