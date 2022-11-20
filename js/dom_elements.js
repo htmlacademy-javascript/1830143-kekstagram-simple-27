@@ -12,10 +12,12 @@ const scaleField = document.querySelector('.scale__control--value');
 const image = document.querySelector('.img-upload__preview img');
 const effectLevelValue = document.querySelector('.effect-level__value');
 const effectLevelSlider = document.querySelector('.effect-level__slider');
+const submitButton = document.querySelector('.img-upload__submit');
 
 export {
   picturesContainer, thumbnailsPicturesTemplate,
   imgEditorForm, imgEditorElement, imgEditorOpenElement, imgEditorcloseElement, bodyElement, commentElement,
   scaleControlSmaller, scaleControlBigger, scaleField, image,
-  effectLevelValue, effectLevelSlider
+  effectLevelValue, effectLevelSlider,
+  submitButton
 };

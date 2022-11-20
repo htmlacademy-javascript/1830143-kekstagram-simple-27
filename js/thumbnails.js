@@ -1,9 +1,9 @@
-import { createPublications } from './data.js';
+// import { createPublications } from './data.js';
 import { picturesContainer, thumbnailsPicturesTemplate } from './dom_elements.js';
 
 
-const renderThumbnails = () => {
-  const thumbnailsPictures = createPublications();
+const renderThumbnails = (thumbnailsPictures) => {
+  // const thumbnailsPictures = createPublications();
   const sectionFragment = document.createDocumentFragment();
 
   thumbnailsPictures.forEach(({url, likes, comments}) => {

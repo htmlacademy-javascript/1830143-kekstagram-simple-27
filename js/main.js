@@ -1,6 +1,12 @@
 import { renderThumbnails } from './thumbnails.js';
-import { ImgUpload, validateImgEditorForm } from './form.js';
+import { closeImgEditor } from './form-modal.js';
+import { setFormSubmit } from './form-validate.js';
+import { getData } from './api.js';
 
-renderThumbnails();
-ImgUpload();
-validateImgEditorForm();
+// renderThumbnails();
+// ImgUpload();
+getData((pictures) => {
+  renderThumbnails(pictures);
+});
+
+setFormSubmit(closeImgEditor);
