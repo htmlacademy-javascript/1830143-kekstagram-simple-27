@@ -1,5 +1,5 @@
 import { imgEditorForm } from './dom_elements.js';
-import { showAlert } from './util.js';
+import { showErrorPopup, showSuccessPopup } from './util.js';
 import { sendData } from './api.js';
 import { submitButton } from './dom_elements.js';
 
@@ -30,9 +30,10 @@ const setFormSubmit = (onSuccess) => {
         () => {
           onSuccess();
           unblockSubmitButton();
+          showSuccessPopup();
         },
         () => {
-          showAlert('Не удалось отправить форму. Попробуйте ещё раз');
+          showErrorPopup();
           unblockSubmitButton();
         },
         new FormData(evt.target),

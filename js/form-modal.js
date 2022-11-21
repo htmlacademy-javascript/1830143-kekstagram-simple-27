@@ -8,7 +8,6 @@ const EMPTY_VALUE = '';
 const onEditorEscKeydown = (evt) => {
   if (isEscapeKey(evt)) {
     evt.preventDefault();
-    // eslint-disable-next-line no-use-before-define
     closeImgEditor();
   }
 };
@@ -54,4 +53,4 @@ imgEditorcloseElement.addEventListener('click', () => {
   closeImgEditor();
 });
 
-export { openImgEditor, closeImgEditor };
+export { openImgEditor, closeImgEditor, onEditorEscKeydown };
