@@ -3,21 +3,6 @@ import { bodyElement, imgEditorElement } from './dom_elements.js';
 
 const ALERT_SHOW_TIME = 5000;
 
-const getRandomNumber = (from, to) => {
-  if (from < 0 || to < 0) {
-    return NaN;
-  }
-  const max = Math.floor(Math.max(from, to));
-  const min = Math.ceil(Math.min(from, to));
-
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-
-const getRandomArrayElement = (elements) => elements[getRandomNumber(0, elements.length - 1)];
-
-const checkStringLength = (string, maxLength) =>
-  string.length <= maxLength;
-
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
 const onSuccessPopupEscKeydown = (evt) => {
@@ -47,10 +32,10 @@ const onClick = (evt) => {
   }
 };
 
-const closeSuccessPopup = () => {
+function closeSuccessPopup () {
   document.querySelector('.success').remove();
   document.removeEventListener('keydown', onSuccessPopupEscKeydown);
-};
+}
 
 const showSuccessPopup = () => {
   const successPopupTemplate = document.querySelector('#success').content.querySelector('.success');
@@ -99,4 +84,4 @@ const showAlert = (message) => {
   }, ALERT_SHOW_TIME);
 };
 
-export { getRandomArrayElement, getRandomNumber, checkStringLength, isEscapeKey, showAlert, showSuccessPopup, showErrorPopup };
+export { isEscapeKey, showAlert, showSuccessPopup, showErrorPopup };

@@ -3,7 +3,7 @@ const thumbnailsPicturesTemplate = document.querySelector('#picture').content.qu
 const imgEditorForm = document.querySelector('.img-upload__form');
 const imgEditorElement = document.querySelector('.img-upload__overlay');
 const imgEditorOpenElement = document.querySelector('#upload-file');
-const imgEditorcloseElement = imgEditorElement.querySelector('#upload-cancel');
+const imgEditorCloseElement = imgEditorElement.querySelector('#upload-cancel');
 const bodyElement = document.querySelector('body');
 const commentElement = imgEditorForm.querySelector('.text__description');
 const scaleControlSmaller = document.querySelector('.scale__control--smaller');
@@ -12,12 +12,13 @@ const scaleField = document.querySelector('.scale__control--value');
 const image = document.querySelector('.img-upload__preview img');
 const effectLevelValue = document.querySelector('.effect-level__value');
 const effectLevelSlider = document.querySelector('.effect-level__slider');
+const effectLevel = document.querySelector('.effect-level');
 const submitButton = document.querySelector('.img-upload__submit');
 
 export {
   picturesContainer, thumbnailsPicturesTemplate,
-  imgEditorForm, imgEditorElement, imgEditorOpenElement, imgEditorcloseElement, bodyElement, commentElement,
+  imgEditorForm, imgEditorElement, imgEditorOpenElement, imgEditorCloseElement , bodyElement, commentElement,
   scaleControlSmaller, scaleControlBigger, scaleField, image,
-  effectLevelValue, effectLevelSlider,
+  effectLevelValue, effectLevelSlider, effectLevel,
   submitButton
 };
