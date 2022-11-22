@@ -1,4 +1,4 @@
-import { effectLevelSlider, effectLevelValue, imgEditorForm, image } from './dom_elements.js';
+import { effectLevel, effectLevelSlider, effectLevelValue, imgEditorForm, image } from './dom_elements.js';
 
 const EFFECTS = [
   { name: 'none', min: 0, max: 100, step: 1 },
@@ -15,7 +15,7 @@ let currentEffect = DEFAULT_EFFECT;
 const isDefaultEffect = () => currentEffect === DEFAULT_EFFECT;
 
 const updateEffect = () => {
-  effectLevelSlider.classList.remove('hidden');
+  effectLevel.classList.remove('hidden');
   effectLevelSlider.noUiSlider.updateOptions({
     range: {
       min: currentEffect.min,
@@ -26,7 +26,7 @@ const updateEffect = () => {
   });
 
   if (isDefaultEffect()) {
-    effectLevelSlider.classList.add('hidden');
+    effectLevel.classList.add('hidden');
   }
 };
 
@@ -38,7 +38,8 @@ const onFormChange = (evt) => {
   updateEffect();
 };
 
-const onUpdateEffect = () => {
+const onEffectUpdate = () => {
+  image.style.willChange = 'filter';
   image.style.filter = 'none';
   image.className = '';
   effectLevelValue.value = '';
@@ -68,6 +69,6 @@ noUiSlider.create(effectLevelSlider, {
 updateEffect();
 
 imgEditorForm.addEventListener('change', onFormChange);
-effectLevelSlider.noUiSlider.on('update', onUpdateEffect);
+effectLevelSlider.noUiSlider.on('update', onEffectUpdate);
 
 export { resetEffect };

@@ -1,6 +1,6 @@
 import { resetScale } from './form-scale.js';
 import { isEscapeKey } from './util.js';
-import { imgEditorElement, imgEditorOpenElement, imgEditorcloseElement, bodyElement, commentElement } from './dom_elements.js';
+import { imgEditorElement, imgEditorOpenElement, imgEditorCloseElement, bodyElement, commentElement, imgEditorForm } from './dom_elements.js';
 import { resetEffect } from './form-effects.js';
 
 const EMPTY_VALUE = '';
@@ -34,7 +34,8 @@ const openImgEditor = () => {
   document.addEventListener('keydown', onEditorEscKeydown);
 };
 
-const closeImgEditor = () => {
+function closeImgEditor () {
+  imgEditorForm.reset();
   imgEditorElement.classList.add('hidden');
   bodyElement.classList.remove('modal-open');
   document.removeEventListener('keydown', onEditorEscKeydown);
@@ -43,13 +44,13 @@ const closeImgEditor = () => {
   removeValidateErrorMassage();
   resetScale();
   resetEffect();
-};
+}
 
 imgEditorOpenElement.addEventListener('change', () => {
   openImgEditor();
 });
 
-imgEditorcloseElement.addEventListener('click', () => {
+imgEditorCloseElement.addEventListener('click', () => {
   closeImgEditor();
 });
 
