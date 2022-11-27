@@ -9,14 +9,9 @@ const pristine = new Pristine(imgEditorForm, {
   errorTextClass: 'text__error',
 });
 
-const blockSubmitButton = () => {
-  submitButton.disabled = true;
-  submitButton.textContent = 'ПУБЛИКУЮ...';
-};
-
-const unblockSubmitButton = () => {
-  submitButton.disabled = false;
-  submitButton.textContent = 'ОПУБЛИКОВАТЬ';
+const blockSubmitButton = (isBlocked = false) => {
+  submitButton.disabled = isBlocked;
+  submitButton.textContent = isBlocked ? 'Публикую...' : 'Опубликовать';
 };
 
 const setFormSubmit = (onSuccess) => {
@@ -25,16 +20,16 @@ const setFormSubmit = (onSuccess) => {
 
     const isValid = pristine.validate();
     if (isValid) {
-      blockSubmitButton();
+      blockSubmitButton(true);
       sendData(
         () => {
           onSuccess();
-          unblockSubmitButton();
+          blockSubmitButton(false);
           showSuccessPopup();
         },
         () => {
           showErrorPopup();
-          unblockSubmitButton();
+          blockSubmitButton(false);
         },
         new FormData(evt.target),
       );

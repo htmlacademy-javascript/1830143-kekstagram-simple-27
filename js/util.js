@@ -63,7 +63,7 @@ const showErrorPopup = () => {
   errorPopup.addEventListener('click', onClick);
 };
 
-const showAlert = (message) => {
+const showAlert = () => {
   const alertContainer = document.createElement('div');
   alertContainer.style.zIndex = '100';
   alertContainer.style.position = 'absolute';
@@ -75,7 +75,7 @@ const showAlert = (message) => {
   alertContainer.style.textAlign = 'center';
   alertContainer.style.backgroundColor = 'red';
 
-  alertContainer.textContent = message;
+  alertContainer.textContent = 'Ошибка загрузки';
 
   document.body.append(alertContainer);
 
